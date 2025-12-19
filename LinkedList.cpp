@@ -25,12 +25,8 @@ class LinkedList{
 
     Node* insertInFront(int data){
         Node* newNode = new Node(data);
-            
-        if(head == nullptr || head->next == nullptr){
-            newNode->next = head;
-            head = newNode;
-        }
-
+        newNode->next = head;
+        head = newNode;
         return newNode;
     }
     void insertInEnd(int data){
@@ -98,7 +94,7 @@ class LinkedList{
         
         Node* current = head;
 
-        while(current->next != nullptr && current->next->data == value){
+        while(current->next != nullptr && current->next->data != value){
             current = current->next;
         }
         if(current->next == nullptr){
